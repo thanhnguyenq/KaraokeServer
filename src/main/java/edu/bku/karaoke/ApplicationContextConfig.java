@@ -22,7 +22,7 @@ import org.springframework.web.servlet.view.UrlBasedViewResolver;
 
 @EnableWebMvc
 @Configuration
-@ComponentScan("edu.bku.karaoke")
+@ComponentScan("edu.bku.karaoke.")
 @PropertySource("classpath:database.properties")
 @EnableTransactionManagement
 @EnableJpaRepositories("edu.bku.karaoke.repository")

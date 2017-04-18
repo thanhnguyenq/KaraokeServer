@@ -4,14 +4,12 @@ import java.util.List;
 
 import org.springframework.http.ResponseEntity;
 
-import edu.bku.karaoke.entity.User;
+import edu.bku.karaoke.entity.UserAccount;
 
 public interface UserService {
-    public List<User> findAll();
+    public List<UserAccount> findAll();
 
-    public User findById(Long id);
+    public UserAccount findById(Long id);
 
-    public ResponseEntity<User> postISO8601(String json);
-
-    public ResponseEntity<User> putISO8601(Long id, String json);
+    public ResponseEntity<String> login(String json);
 }

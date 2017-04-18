@@ -15,9 +15,10 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "\"user\"")
-public class User implements Serializable {
-    private static final long serialVersionUID = 1L;
+@Table(name = "user_account")
+public class UserAccount implements Serializable {
+
+    private static final long serialVersionUID = -2171504042654318115L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
