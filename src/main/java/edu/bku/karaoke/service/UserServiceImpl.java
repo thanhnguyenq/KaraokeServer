@@ -44,7 +44,11 @@ public class UserServiceImpl implements UserService {
             logger.error("Cannot read json");
             return new ResponseEntity<String>(HttpStatus.BAD_REQUEST);
         }
-        List<UserAccount> userList = userRepository.getUserByUsernameAndPassword(jsonFile.get("username").toString(), jsonFile.get("password").toString());
+
+        String username = jsonFile.get("username").toString().replaceAll("\"", "");
+        String password = jsonFile.get("password").toString().replaceAll("\"", "");
+
+        List<UserAccount> userList = userRepository.getUserByUsernameAndPassword(username, password);
         if (userList.isEmpty() || userList.size() != 1) {
             logger.warn("Not found user");
             return new ResponseEntity<String>(HttpStatus.NOT_FOUND);
